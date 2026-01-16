@@ -1,4 +1,4 @@
-# Veterinary Chatbot SDK
+# AI Based Pet Health Chatbot
 
 A production-ready, embeddable chatbot SDK for veterinary clinics that provides AI-powered pet care assistance and appointment booking capabilities.
 
@@ -331,8 +331,8 @@ MIT License - See LICENSE file for details
 ## Support
 
 For issues or questions:
-- Create an issue on GitHub
-- Contact: support@veterinarychatbot.com
+- Create an issue on [GitHub](https://github.com/vinay02022/petVet_doc_bot/issues)
+- Contact: vinay02022@gmail.com
 
 ## Acknowledgments
 
