@@ -1,0 +1,421 @@
+/* Appointment Form Modal Styles */
+
+.appointment-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100000;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.appointment-modal {
+  background: white;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 680px;
+  max-height: 85vh;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  animation: slideUp 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Modal Header */
+.modal-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 24px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.close-button {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.2s ease;
+}
+
+.close-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+/* Form Container */
+.appointment-form {
+  padding: 30px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Form Sections */
+.form-section {
+  margin-bottom: 32px;
+}
+
+.form-section h3 {
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+/* Form Layout */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* Form Groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  color: #555;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  background: #fafafa;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group input.error,
+.form-group textarea.error {
+  border-color: #ef4444;
+  background: #fef2f2;
+}
+
+.form-group input.error:focus,
+.form-group textarea.error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* Phone Input Group */
+.phone-group {
+  grid-column: 1 / -1;
+}
+
+/* React Phone Input Styles */
+.PhoneInput {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.phone-input-field .PhoneInputInput,
+.phone-input-error .PhoneInputInput {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: inherit;
+  background: #fafafa;
+  transition: all 0.2s ease;
+}
+
+.phone-input-field .PhoneInputInput:focus {
+  outline: none;
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.phone-input-error .PhoneInputInput {
+  border-color: #ef4444;
+  background: #fef2f2;
+}
+
+.phone-input-error .PhoneInputInput:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.PhoneInputCountry {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.PhoneInputCountrySelect {
+  padding: 8px 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 15px;
+  background: #fafafa;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.PhoneInputCountrySelect:focus {
+  outline: none;
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.PhoneInputCountryIcon {
+  width: 20px;
+  height: 15px;
+  margin-right: 8px;
+}
+
+/* Error Messages */
+.error-message {
+  color: #ef4444;
+  font-size: 13px;
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* Textarea */
+textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.5;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  padding-top: 24px;
+  margin-top: 24px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.cancel-button,
+.submit-button {
+  padding: 12px 32px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cancel-button {
+  background: #f0f0f0;
+  color: #666;
+}
+
+.cancel-button:hover {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.submit-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  min-width: 150px;
+}
+
+.submit-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+.submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Select Dropdown Styling */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 20px;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+/* Date and Time Input Styling */
+input[type="date"],
+input[type="time"] {
+  cursor: pointer;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: opacity(0.6);
+}
+
+input[type="date"]:hover::-webkit-calendar-picker-indicator,
+input[type="time"]:hover::-webkit-calendar-picker-indicator {
+  filter: opacity(1);
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+  .appointment-modal {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    border-radius: 0;
+  }
+
+  .modal-header {
+    padding: 20px;
+  }
+
+  .modal-header h2 {
+    font-size: 20px;
+  }
+
+  .appointment-form {
+    padding: 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .phone-input {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .cancel-button,
+  .submit-button {
+    width: 100%;
+  }
+}
+
+/* Loading State */
+.submit-button:disabled::after {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-left: 8px;
+  border: 2px solid transparent;
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Success Animation */
+.form-success {
+  text-align: center;
+  padding: 60px 30px;
+  animation: slideUp 0.3s ease;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  animation: scaleIn 0.4s ease;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.success-icon::after {
+  content: '✓';
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+}
