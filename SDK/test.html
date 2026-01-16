@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veterinary Chatbot SDK Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .test-section {
+      background: white;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .test-section h2 {
+      color: #4CAF50;
+      margin-top: 0;
+    }
+
+    .code-block {
+      background: #f4f4f4;
+      padding: 15px;
+      border-radius: 4px;
+      border-left: 4px solid #4CAF50;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      overflow-x: auto;
+    }
+
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 5px;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+
+    .instructions {
+      background: #fff3cd;
+      border: 1px solid #ffc107;
+      padding: 15px;
+      border-radius: 4px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Veterinary Chatbot SDK Test Page</h1>
+
+  <div class="instructions">
+    <strong>Setup Instructions:</strong>
+    <ol>
+      <li>Start MongoDB: <code>mongod</code></li>
+      <li>Start Backend: <code>cd BACKEND && npm run dev</code></li>
+      <li>Start Frontend: <code>cd FRONTEND && npm run dev</code></li>
+      <li>Open this HTML file in your browser</li>
+    </ol>
+  </div>
+
+  <div class="test-section">
+    <h2>Test 1: Basic Integration</h2>
+    <p>This test loads the chatbot without any configuration.</p>
+    <div class="code-block">
+      &lt;script src="chatbot-standalone.js"&gt;&lt;/script&gt;
+    </div>
+    <p>The chatbot should appear in the bottom-right corner.</p>
+  </div>
+
+  <div class="test-section">
+    <h2>Test 2: With Configuration</h2>
+    <p>This test loads the chatbot with custom context data.</p>
+    <div class="code-block">
+      &lt;script&gt;<br>
+      &nbsp;&nbsp;window.VetChatbotConfig = {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;userId: "test_user_123",<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;userName: "John Doe",<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;petName: "Max",<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;source: "test-page"<br>
+      &nbsp;&nbsp;};<br>
+      &lt;/script&gt;<br>
+      &lt;script src="chatbot-standalone.js"&gt;&lt;/script&gt;
+    </div>
+  </div>
+
+  <div class="test-section">
+    <h2>Test 3: Programmatic Control</h2>
+    <p>Use these buttons to control the chatbot programmatically:</p>
+    <button onclick="VetChatbot.open()">Open Chatbot</button>
+    <button onclick="VetChatbot.close()">Close Chatbot</button>
+    <button onclick="VetChatbot.destroy()">Remove Chatbot</button>
+    <button onclick="VetChatbot.init()">Re-initialize Chatbot</button>
+  </div>
+
+  <div class="test-section">
+    <h2>Test Scenarios</h2>
+    <p>Try these conversations with the chatbot:</p>
+    <ol>
+      <li><strong>Veterinary Questions:</strong> "What vaccines does my puppy need?"</li>
+      <li><strong>Book Appointment:</strong> "I want to book an appointment"</li>
+      <li><strong>Non-veterinary (should be rejected):</strong> "What's the weather today?"</li>
+      <li><strong>Cancel Booking:</strong> Start booking, then type "cancel"</li>
+    </ol>
+  </div>
+
+  <!-- Load the chatbot with configuration -->
+  <script>
+    // Optional: Set configuration before loading
+    window.VetChatbotConfig = {
+      userId: "test_user_123",
+      userName: "Test User",
+      petName: "Buddy",
+      source: "sdk-test-page"
+    };
+  </script>
+
+  <!-- Load the standalone chatbot SDK -->
+  <script src="chatbot-standalone.js"></script>
+</body>
+</html>
