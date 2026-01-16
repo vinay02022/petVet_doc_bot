@@ -35,7 +35,7 @@ A production-ready, embeddable chatbot SDK for veterinary clinics that provides 
 ## Project Structure
 
 ```
-veterinary-chatbot/
+petVet_doc_bot/
 ├── BACKEND/                 # Node.js Express API
 │   ├── src/
 │   │   ├── controllers/     # Request handlers
@@ -74,8 +74,8 @@ veterinary-chatbot/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/veterinary-chatbot.git
-cd veterinary-chatbot
+git clone https://github.com/vinay02022/petVet_doc_bot.git
+cd petVet_doc_bot
 ```
 
 ### 2. Backend Setup
