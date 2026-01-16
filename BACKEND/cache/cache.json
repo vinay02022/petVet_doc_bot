@@ -1,0 +1,12 @@
+{
+  "l1": [],
+  "l2": [],
+  "stats": {
+    "hits": 0,
+    "misses": 1,
+    "evictions": 0,
+    "apiCalls": 1,
+    "savedApiCalls": 0
+  },
+  "timestamp": 1768568537706
+}
